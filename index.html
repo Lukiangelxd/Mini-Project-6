@@ -1,0 +1,51 @@
+<!-- This is for submitting a search query, and recieving a response.
+It needs to be able to perform a generic search or a filtered one via formats.
+All the results of the display must be on a different page (search-results).
+You can conduct additional searchs on the result page as well.
+
+It needs a good, simple UI. Focus on making it work initially. Form matters, but a fancy look that doesn't work is useless.
+It needs an input form with option dropdown menu for LoC formats.
+It needs a browser event listener that grabs both inputs on submission, and redirect the user to a page with those values
+as the query parameters. Use location.replace().
+The base should look like ./search-results.html?q=dogs&format= . This gets the query of dogs, with no format.-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Library of Congress Search Engine</title>
+</head>
+<body>
+    <main> 
+        <div class="card">
+            <h3> Library of Congress Search Engine </h3>
+            <form  id = "search-form">
+            <input name="search" id="search" type="text" autofocus="true" class="form-input" />
+            <select id="format">
+                <option value="none">General</option>
+                <option value="audio">Audio Recording</option>
+                <option value="book">Books/Printed Material</option>
+                <option value="film-and-videos">Film, Videos</option>
+                <option value="legislation">Legislation</option>
+                <option value="manuscripts">Manuscripts/Mixed Materials</option>
+                <option value="maps">Maps</option>
+                <option value="newspaper">Newspaper</option>
+                <option value="photos">Photo, Print, Drawings</option>
+                <option value="notated-music">Printed Music</option>
+                <option value="web-archives">Web Archives</option>
+            </select>
+            <button type="submit" class="btn">Search</button>     
+            </form>       
+        </div>
+    </main>
+<script src="./assets/js/script.js"></script>
+</body>
+
+</html>
+<!-- As of 7:38, 7/10, this is functional in the barest terms. That means I can move onto the search-results.-->
